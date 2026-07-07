@@ -1,0 +1,597 @@
+/* ===========================
+   下城区日志 · style.css
+   极简赛博朋克
+=========================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0a0e14;
+    color: #c8d6e5;
+    font-family: 'Courier New', 'Consolas', monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.page {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease;
+}
+
+/* ===== 通用 ===== */
+h1 {
+    font-size: 44px;
+    color: #00d4ff;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.25);
+    letter-spacing: 4px;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 28px;
+    color: #b388ff;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+
+.btn-primary {
+    padding: 14px 40px;
+    border: 2px solid #00d4ff;
+    background: transparent;
+    color: #00d4ff;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 2px;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background: rgba(0, 212, 255, 0.12);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+}
+
+.btn-primary:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-roll {
+    padding: 6px 18px;
+    border: 1px solid #445566;
+    background: transparent;
+    color: #8899bb;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.btn-roll:hover {
+    border-color: #b388ff;
+    color: #b388ff;
+    background: rgba(179, 136, 255, 0.08);
+}
+
+/* ===== PAGE 1 ===== */
+.title-block {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    color: #556688;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-top: 4px;
+}
+
+.intro-text {
+    background: rgba(20, 28, 40, 0.6);
+    border-left: 2px solid #00d4ff;
+    padding: 28px 24px;
+    margin-bottom: 36px;
+    line-height: 2;
+    color: #aabbcc;
+    font-size: 15px;
+}
+
+.intro-text p {
+    margin: 0;
+}
+
+#page1 .btn-primary {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ===== PAGE 2 ===== */
+#page2 h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin: 24px 0;
+}
+
+.form-group label {
+    display: block;
+    color: #8899bb;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(20, 28, 40, 0.8);
+    border: 1px solid #2a3a4a;
+    color: #c8d6e5;
+    font-size: 18px;
+    font-family: inherit;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #00d4ff;
+}
+
+.roll-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 300;
+    color: #c8d6e5;
+    min-width: 50px;
+    font-family: inherit;
+}
+
+.hint {
+    color: #445566;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.error-msg {
+    color: #ff6b6b;
+    margin-top: 12px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#page2 .btn-primary {
+    display: block;
+    margin: 12px auto 0;
+}
+
+/* ===== PAGE 3 ===== */
+
+/* 玩家信息 */
+#playerInfo {
+    background: rgba(20, 28, 40, 0.7);
+    border: 1px solid #1a2a3a;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+}
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.player-id {
+    font-size: 20px;
+    color: #00d4ff;
+    font-weight: 300;
+}
+
+.player-month {
+    font-size: 14px;
+    color: #556688;
+}
+
+.stat-row {
+    display: flex;
+    gap: 24px;
+}
+
+.stat-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #556688;
+    min-width: 48px;
+}
+
+.stat-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: #1a2a3a;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.stat-bar {
+    height: 100%;
+    background: #00e676;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.stat-bar.san-bar {
+    background: #b388ff;
+}
+
+.stat-value {
+    font-size: 14px;
+    min-width: 28px;
+    text-align: right;
+    color: #c8d6e5;
+}
+
+/* 事件面板 */
+#eventPanel {
+    background: rgba(20, 28, 40, 0.7);
+    border: 1px solid #1a2a3a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 180px;
+}
+
+#eventContent {
+    line-height: 1.9;
+    font-size: 14px;
+    color: #c8d6e5;
+}
+
+.event-placeholder {
+    color: #445566;
+    font-style: italic;
+}
+
+#eventContent .event-title {
+    color: #00d4ff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#eventContent .event-desc {
+    color: #aabbcc;
+    margin: 6px 0 10px 0;
+}
+
+#eventContent .event-flavor {
+    color: #556688;
+    font-size: 13px;
+    font-style: italic;
+}
+
+#eventOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.event-option-btn {
+    padding: 10px 16px;
+    background: rgba(30, 42, 58, 0.6);
+    border: 1px solid #2a3a4a;
+    color: #c8d6e5;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.25s;
+}
+
+.event-option-btn:hover {
+    border-color: #00d4ff;
+    background: rgba(0, 212, 255, 0.06);
+    transform: translateX(4px);
+}
+
+.event-option-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#eventFeedback {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: rgba(0, 212, 255, 0.06);
+    border-left: 2px solid #00d4ff;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #8899bb;
+    transition: all 0.3s;
+}
+
+.feedback-hidden {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 16px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.feedback-visible {
+    opacity: 1;
+    max-height: 300px;
+    padding: 12px 16px;
+    margin-top: 14px;
+}
+
+.feedback-visible .fb-good {
+    color: #00e676;
+}
+
+.feedback-visible .fb-bad {
+    color: #ff6b6b;
+}
+
+.feedback-visible .fb-bond {
+    color: #ffab40;
+}
+
+/* NPC 角色卡 */
+#npcPanel {
+    background: rgba(20, 28, 40, 0.7);
+    border: 1px solid #1a2a3a;
+    border-radius: 8px;
+    padding: 16px 18px;
+}
+
+.npc-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.npc-card {
+    flex: 1;
+    min-width: 140px;
+    background: rgba(12, 18, 28, 0.7);
+    border: 1px solid #1a2a3a;
+    border-radius: 6px;
+    padding: 14px 16px;
+    transition: border 0.3s;
+}
+
+.npc-card:hover {
+    border-color: #2a3a5a;
+}
+
+.npc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.npc-name {
+    font-size: 17px;
+    color: #c8d6e5;
+    font-weight: 600;
+}
+
+.npc-tag {
+    font-size: 11px;
+    color: #445566;
+}
+
+.npc-bond {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.bond-label {
+    font-size: 11px;
+    color: #445566;
+    min-width: 36px;
+}
+
+.bond-bar-wrap {
+    flex: 1;
+    height: 4px;
+    background: #1a2a3a;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bond-bar {
+    height: 100%;
+    background: #ffab40;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+.bond-value {
+    font-size: 12px;
+    min-width: 24px;
+    text-align: right;
+    color: #ffab40;
+}
+
+.npc-status {
+    font-size: 12px;
+    color: #556688;
+    font-style: italic;
+}
+
+.npc-card.locked {
+    border-color: #ffab40;
+    box-shadow: 0 0 20px rgba(255, 171, 64, 0.06);
+}
+
+.npc-card.locked .npc-name::after {
+    content: ' ★';
+    color: #ffab40;
+    font-size: 12px;
+}
+
+/* ===== 结局弹窗 ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.4s ease;
+}
+
+.modal-box {
+    background: #121c2a;
+    border: 1px solid #2a3a5a;
+    border-radius: 12px;
+    padding: 36px 40px 30px;
+    max-width: 460px;
+    width: 92%;
+    text-align: center;
+    animation: slideUp 0.4s ease;
+}
+
+.ending-box h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.ending-box p {
+    color: #8899bb;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.ending-box .btn-primary {
+    margin: 0 auto;
+}
+
+#endingRestartBtn {
+    border-color: #445566;
+    color: #8899bb;
+}
+
+#endingRestartBtn:hover {
+    border-color: #00d4ff;
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.08);
+}
+
+/* ===== 动画 ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .intro-text {
+        padding: 18px 16px;
+        font-size: 13px;
+    }
+
+    .stat-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .npc-grid {
+        flex-direction: column;
+    }
+
+    .npc-card {
+        min-width: unset;
+    }
+
+    .modal-box {
+        padding: 24px 18px 20px;
+    }
+}
+
+/* ===== 继续按钮 ===== */
+.btn-continue {
+    margin-top: 14px;
+    padding: 10px 32px;
+    border: 1px solid #00d4ff;
+    background: rgba(0, 212, 255, 0.08);
+    color: #00d4ff;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.25s;
+}
+
+.btn-continue:hover {
+    background: rgba(0, 212, 255, 0.18);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.10);
+}
+
+.btn-continue:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
