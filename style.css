@@ -595,3 +595,149 @@ h2 {
     opacity: 0.4;
     cursor: not-allowed;
 }
+
+/* ================================================================
+   第三批：碎片弹窗样式（新增）
+   粘贴到 style.css 最末尾
+   ================================================================ */
+
+/* ---------- 碎片弹窗 ---------- */
+.fragment-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fragmentFadeIn 0.5s ease;
+    padding: 20px;
+}
+
+.fragment-box {
+    max-width: 520px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #0f1a26;
+    border: 1px solid #2a4a6a;
+    border-radius: 16px;
+    padding: 32px 36px 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 180, 255, 0.05);
+    animation: fragmentSlideUp 0.5s ease;
+    position: relative;
+}
+
+/* 滚动条美化 */
+.fragment-box::-webkit-scrollbar {
+    width: 4px;
+}
+
+.fragment-box::-webkit-scrollbar-track {
+    background: #0a121c;
+    border-radius: 2px;
+}
+
+.fragment-box::-webkit-scrollbar-thumb {
+    background: #2a4a6a;
+    border-radius: 2px;
+}
+
+.fragment-box::-webkit-scrollbar-thumb:hover {
+    background: #3a6a8a;
+}
+
+.fragment-title {
+    font-size: 20px;
+    font-weight: 300;
+    color: #b388ff;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #1a2a3a;
+    font-family: 'Courier New', 'Consolas', monospace;
+}
+
+.fragment-content {
+    font-size: 14px;
+    line-height: 2;
+    color: #c8d6e5;
+    font-family: 'Courier New', 'Consolas', monospace;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.fragment-content br {
+    display: block;
+    content: '';
+    margin-top: 2px;
+}
+
+.fragment-close-btn {
+    margin-top: 20px;
+    padding: 8px 24px;
+    border: 1px solid #2a4a6a;
+    border-radius: 6px;
+    background: transparent;
+    color: #556688;
+    font-size: 13px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fragment-close-btn:hover {
+    border-color: #b388ff;
+    color: #b388ff;
+    background: rgba(179, 136, 255, 0.06);
+}
+
+/* ---------- 碎片动画 ---------- */
+@keyframes fragmentFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fragmentSlideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ---------- 碎片响应式 ---------- */
+@media (max-width: 600px) {
+    .fragment-box {
+        padding: 24px 20px 20px;
+        max-height: 85vh;
+    }
+
+    .fragment-title {
+        font-size: 17px;
+    }
+
+    .fragment-content {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .fragment-close-btn {
+        font-size: 12px;
+        padding: 6px 18px;
+    }
+}
